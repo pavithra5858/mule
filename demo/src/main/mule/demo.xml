@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:validation="http://www.mulesoft.org/schema/mule/validation" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/validation http://www.mulesoft.org/schema/mule/validation/current/mule-validation.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="4cc09fdb-e900-4df4-9c83-9b4cddaa2a36" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="parentFlow" doc:id="cc9fe420-53a1-4fae-b7b2-fccfb13b2283" >
+		<http:listener doc:name="Listener" doc:id="cad402bd-15dc-4409-bdf0-b4df62aced99" config-ref="HTTP_Listener_config" path="/employee"/>
+		<set-payload value="error in child flow" doc:name="Set Payload" doc:id="914812d7-8a4c-4b06-be5a-5225ac652e36" />
+	</flow>
+</mule>
