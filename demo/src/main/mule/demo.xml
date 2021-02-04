@@ -11,6 +11,5 @@ http://www.mulesoft.org/schema/mule/validation http://www.mulesoft.org/schema/mu
 	<flow name="parentFlow" doc:id="cc9fe420-53a1-4fae-b7b2-fccfb13b2283" >
 		<http:listener doc:name="Listener" doc:id="cad402bd-15dc-4409-bdf0-b4df62aced99" config-ref="HTTP_Listener_config" path="/employee"/>
 		<set-payload value="welcome" doc:name="Set Payload" doc:id="914812d7-8a4c-4b06-be5a-5225ac652e36" />
-		<logger level="INFO" doc:name="Logger" doc:id="8d5c6673-ea0f-4e50-9d27-180c685bb7ca" message="#[payload]"/>
 	</flow>
 </mule>
